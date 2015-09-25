@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang= "en" >
+	<head>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="start.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="signupValidator.js" type="text/javascript"> </script>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div id="register" class="register">
+				<form id="create_account" action="/newUser" method="post" onsubmit="return validateForm()">
+					<p>
+						Name:<br/><input type="text" id="name" name="name" placeholder="your name"/><br/>
+					</p>
+					<p>
+						Email:<br/>    <input type="text" id="email" name="email" placeholder="your email"/><br/>
+					</p>
+					<p>
+						Password:<br/> <input type="password" id="password" name="password" placeholder="password"/><br/>
+					</p>
+					<p>
+						Password Retype:<br/> <input type="password" id="password-check" name="password-check" placeholder="password"/><br/>
+					</p>
+					<input type="submit" id="create_account" value="Submit"/>
+				</form>
+			</div>
+		</div>
+	<script>
+		function validateForm() {
+			var x = document.forms["myForm"]["fname"].value;
+			if (x == null || x == "") {
+				alert("Name must be filled out");
+				return false;
+			}
+		}
+	</script>
+	</body>
+	
+</html>

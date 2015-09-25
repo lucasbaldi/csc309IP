@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title> Synergy Startups </title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="start.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<h1>
+			<form action = '/posts.html' method='get'>	
+						<button type="submit" class="btn btn-primary btn-lrg">
+							<span class="glyphicon glyphicon-th-list"> Back to Posts</span> 
+						</button>
+					</form>
+		</h1>
+		<div class="container">
+			<div class = "postCreate">
+				<form id="create_post" action="editPostActive" method="post">
+					Change Idea Title:<br/>
+					<input type="text" id="title" name="title" placeholder="New Startup title"/><br/>
+					Startup Idea Description:<br/>
+					<!--<input type="textarea" cols="30" rows="5" id="description" name="description" placeholder="new startup description"/><br/> -->
+					<textarea name="description" form="create_post" cols="60" rows="5" placeholder="Description"></textarea>
+					<br/>
+					Select an Industry:<br/>
+					<select name="industry">
+						<option value="health">Health</option>
+						<option value="tech">Tech</option>	
+						<option value="travel">Travel</option>
+						<option value="education">Education</option>
+						<option value="other">Other</option>
+					</select>
+					<br/>
+					Tags:<br/>
+					<input type="text" name="tags" placeholder="Tags"/>
+					<input type="hidden" name="pid" value="<%=pid%>"/>
+					<br/>
+					<input type="submit" id="create_post" value="Submit"/>
+					
+				</form>
+			</div>
+			<div class="sidebar">
+			<form action = '/logout' method='GET' >
+					<button type="submit" class="btn btn-success btn-lrg">
+						<span class="glyphicon glyphicon-log-out"/>  Logout
+					</button>
+					</input>
+				</form>
+			</div>
+		</div>
+	</body>
+	
+</html>

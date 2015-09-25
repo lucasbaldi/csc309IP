@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title> Synergy Startups </title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="start.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		
+		<h1>
+			<form action = '/posts.html' method='get'>	
+						<button type="submit" class="btn btn-primary btn-lrg">
+							<span class="glyphicon glyphicon-th-list"> Back to Posts</span> 
+						</button>
+					</form>
+		</h1>
+		
+		<div class="container">
+			<div class = "viewPost">
+				Title:<br/><div class="postTitle"> <%=post[0].title%></div>
+				<br/><br/>
+				Description:<br/><div class="postDescrip"><%=post[0].description%></div><br/>
+				Date submitted:<%=post[0].date%><br/>
+				Socre: <%=post[0].score%><br/>
+				Tags:
+				<%if(tags.length>0){%>
+					<%=tags%>
+					
+				<%} else{%>
+					No Tags
+				<%}%>
+				
+				<%if(user){%>
+				<br/> Rating
+					<%if (rating==1){%>
+					User has already Liked this post
+					<%}else if(rating==2){%>
+					User has already Disliked this post
+					<%}else{%>
+					<form action = '/ratePost' method='POST' >
+						<button type="submit" class="btn btn-success btn-lrg">
+							<span class="glyphicon glyphicon-thumbs-up"/>  Like
+						</button>
+						<input type="hidden" name="rating" value="like"/>
+						<input type="hidden" name="pid" value="<%=pid%>"/>
+						</input>
+					</form>
+						<form action = '/ratePost' method='POST' >
+						<button type="submit" class="btn btn-success btn-lrg">
+							<span class="glyphicon glyphicon-thumbs-down"/>  Dislike
+						</button>
+						<input type="hidden" name="rating" value="dislike"/>
+						<input type="hidden" name="pid" value="<%=pid%>"/>
+					</form>
+					<%}%>
+				<%}%>
+			</div>
+			<div class="sidebar">
+			<%if (user) {%>
+				<!-- USER IS LOGGED IN -->
+				<% if (user==owner){%> 
+					<form action = '/editPost' method='post'>	
+						<button type="submit" class="btn btn-success btn-lrg">
+							<span class="glyphicon glyphicon-plus"> Edit This Post</span> 
+						</button>
+						<input type="hidden" name="pid" value="<%=pid%>"/>
+					</form>
+					<br/>
+					<br/>
+					<form action = '/deletePost' method='post'>	
+						<button type="submit" class="btn btn-danger btn-lrg">
+							<span class="glyphicon glyphicon-fire"> Delete This Post</span> 
+						</button>
+						<input type="hidden" name="pid" value="<%=pid%>"/>
+					</form>	<br/><br/>
+				
+				<%}%>
+			
+			<form action = '/userPosts<%=user%>' method='GET' >
+				<button type="submit" class="btn btn-primary btn-lrg">
+					<span class="glyphicon glyphicon-user"/>  See your posts</span>
+				</button>
+				</input>
+			</form>
+			<form action = '/logout' method='GET' >
+					<button type="submit" class="btn btn-success btn-lrg">
+						<span class="glyphicon glyphicon-log-out"/>  Logout
+					</button>
+					</input>
+			</form>
+			
+			<%}else{%>
+			<!-- User is not logged in -->
+			<h2> Log in </h2>
+			<form action = '/login' method='post'>
+				<input type = "text" name = "email" value="email" require="" />
+				<input type = "password" name = "password" value = "password" required="" />
+				<br/>
+				<input type = "submit" value="submit"/>
+			</form>
+			<br/>
+			Without an Account, you cannot submit new Synergistic Startup Ideas	or rate posts
+			<form action = '/register.html' method='GET' >
+					<button type="submit" class="btn btn-primary btn-lrg">
+						<span class="glyphicon glyphicon-leaf"/>  Register
+					</button>
+				
+				</form>
+			<%}%>
+			</div>
+		</div>
+	</body>
+</html>

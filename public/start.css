@@ -1,0 +1,123 @@
+body {
+    background-color: rgb(179, 141, 224);
+    width: inherit;
+}
+
+h1 {
+    background-color: rgb(207, 201, 240);
+    margin-top: 0px;
+    margin-right: 0px;
+    height: 100px;
+    line-height: 25px;
+    padding: 30px 10px;
+    font-family: AdobeGothic;
+    color: rgb(0,0,0);
+}
+.container{
+	width:88%;
+}
+.login {
+    background-color: white;
+    height: 400px;
+    width: 29%;;
+    float: left;
+	padding-left:5px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(158, 115, 209);
+}
+
+.about{
+	background-color: white;
+	height: 300px;
+	width: 70%;
+	float: right;
+	padding-left:5px;
+	border-style: solid;
+    border-width: 10px;
+    border-color: rgb(158, 115, 209);
+}
+
+.register{
+	background-color: white;
+	float: center;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(158, 115, 209);
+	margin-top:10px;
+	height:400px;
+	width:300px;
+}
+
+.postsBackground{
+	background-color: rgb(207, 201, 240);
+	float: left;
+	/*margin: 20px;*/
+	/*height: 600px;*/	
+	width: 70%;
+	display:inline-block;
+	
+}
+
+.post{
+	background-color: rgb(227, 223, 246);
+	border-style: solid;
+    border-width: 5px;
+    border-color: rgb(147, 74, 184);
+	float: center;
+	margin: 20px;
+	padding: 10px;
+	padding-left: 5px;
+	/*height: 70px;*/
+}
+
+.postTitle{
+	background-color: rgb(255,255,255);
+	font-weight:bold;
+	margin-left:5px;
+	display:inline-block;
+	padding:5px;
+	border-style:solid;
+	border-width:3px;
+	border-color: rgb(0,0,0);
+}
+.postDescrip{
+	background-color: rgb(255,255,255);
+	margin-left:5px;
+	display:inline-block;
+	padding:5px;
+}
+
+.sidebar{
+	background-color: rgb(207, 201, 240);
+	border-style: solid;
+	float:right;
+	margin-left:1%;
+	padding-left:5px;
+	width:29%;
+	/*height:400px;*/
+	display:inline-block;
+}
+.postCreate{
+	background-color: rgb(207, 201, 240);
+	float:left;
+	width:70%;
+	height:400px;
+	padding-left:5px;
+	padding-top:10px;
+}
+.viewPost{
+	background-color: rgb(207, 201, 240);
+	float:left;
+	width:70%;
+	height:400px;
+	padding-left:5px;
+	padding-top:10px;
+	border-style: solid;
+    border-width: 3px;
+    border-color: rgb(147, 74, 184);
+}
+p{
+	magin-top:10px;
+	margin-left:15px;
+}
